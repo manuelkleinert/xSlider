@@ -1,0 +1,35 @@
+<!doctype html>
+<html style="margin:0px; padding:0px;">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>xGallery</title>
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" >
+<link href="xSlider.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="xSlider.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("#slider").xSlider({showComments:true,animateType:'karussell'});
+});
+</script>
+</head>
+<body  style="margin:0px; padding:0px;">
+<div class="row">
+		<div class="col-md-8 black" style="height:430px;">
+			<div id="slider" class="xpager-slider">
+				<img src="photos/1.JPG" alt="test" />
+				<img src="photos/3.JPG"  alt="Italien"/>
+				<img src="photos/4.JPG" />
+			</div>
+		</div>
+		<div class="col-md-4">
+			<h1>xPager - Slider</h1>
+			Der Slider ist schnell und einfach eingebaut und hat viele Funktionen die über die Optionen editierbar sind.<br /><br />
+			<a class="btn btn-success" href="xSlider.js" target="_blank">Download xGallery (Script)</a>
+			<a class="btn btn-warning" href="xSlider.css" target="_blank">xGallery (CSS)</a>
+		</div>
+	</div>
+</body>
+</html>
