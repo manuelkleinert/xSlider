@@ -1,0 +1,4 @@
+xSlider
+=======
+
+Responsive Image Slider
