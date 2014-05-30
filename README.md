@@ -4,11 +4,25 @@ xSlider
 Responsive Image Slider with many settings.
 <br><br>
 
+HTML
+=======
+
+``` html
+	<div id="slider" class="xpager-slider">
+		<img src="photos/1.JPG" alt="test" />
+                <img src="photos/2.JPG"  alt="Italien"/>
+		<img src="photos/3.JPG"  alt="Italien"/>
+		<img src="photos/4.JPG" />
+	</div>
+
+```
+
+
 Init Script
 =======
 
 ``` js
-$("#demo").xSlider({
+$("#slider").xSlider({
 		id:false,
 		obj:false,
 		showTime:5000, // Anzeige Zeit
