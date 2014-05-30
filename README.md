@@ -3,6 +3,10 @@ xSlider
 <br>
 Responsive Image Slider with many settings.
 <br><br>
+
+Init Script
+=======
+
 ``` js
 $("#demo").xSlider({
 		id:false,
