@@ -96,7 +96,6 @@ xxxxxxx      xxxxxxxPPPPPPPPPP          aaaaaaaaaa  aaaa   gggggggg::::::g     e
     position:absolute; top:0px; float:left;
 }
 
-
 /* Animate karussell */
 .xpager-slider[data-type='karussell'] .overflow .inner-content .image-content{position:absolute; top:0px; float:left;}
 .xpager-slider[data-type='karussell'] .overflow .inner-content .image-content.start{z-index:2;}
