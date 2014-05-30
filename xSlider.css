@@ -91,11 +91,6 @@ xxxxxxx      xxxxxxxPPPPPPPPPP          aaaaaaaaaa  aaaa   gggggggg::::::g     e
 .xpager-slider[data-type='fade'] .overflow .inner-content .image-content{float:none; position:absolute; top:0px; left:0px; z-index:0; display:block;}
 .xpager-slider[data-type='fade'] .overflow .inner-content .start{z-index:2!important;}
 
-.xpager-slider[data-type='karussell'] .overflow .inner-content .image-content{
-    background-color:red;
-    position:absolute; top:0px; float:left;
-}
-
 /* Animate karussell */
 .xpager-slider[data-type='karussell'] .overflow .inner-content .image-content{position:absolute; top:0px; float:left;}
 .xpager-slider[data-type='karussell'] .overflow .inner-content .image-content.start{z-index:2;}
