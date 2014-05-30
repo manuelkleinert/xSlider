@@ -26,7 +26,7 @@ $("#slider").xSlider({
 	obj:false,
 	showTime:5000, // Anzeige Zeit
 	animateSpeed:700, // Animations Zeit
-	animateType:"fade", // Animation Type
+	animateType:"fade", // Animation Type (slide,slide-vertical,karussell,fade,ken-burns)
 	easingType:"linear", // Animation Easing Type
 	verticalFormat:false, // Hochformat anpassem
 	scale: true, // Bilder Skalieren
