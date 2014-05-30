@@ -14,7 +14,6 @@ HTML
 		<img src="photos/3.JPG"  alt="Italien"/>
 		<img src="photos/4.JPG" />
 	</div>
-
 ```
 
 
