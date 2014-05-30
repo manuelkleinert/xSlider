@@ -17,7 +17,7 @@ HTML
 ```
 
 
-Init Script
+Script
 =======
 
 ``` js
