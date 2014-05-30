@@ -3,6 +3,7 @@ xSlider
 <br>
 Responsive Image Slider with many settings.
 <br><br>
+``` js
 $("#demo").xSlider({<br>
                 id:false,<br>
                 obj:false,<br>
@@ -31,3 +32,4 @@ $("#demo").xSlider({<br>
                 imageLink:false, // Open Link on Gallery Click <br>
 		beta:false<br>
 		});<br>
+```
