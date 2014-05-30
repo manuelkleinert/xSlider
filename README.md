@@ -46,7 +46,7 @@ $("#slider").xSlider({
 	randomOrder:false, // Order
 	shadowBox:false, // Open on Click in Shadowbox
 	shadowBoxComments:true, // Show Alt Immages Comment in ShadowBox
-        imageLink:false, // Open Link on Gallery Click 
+	imageLink:false, // Open Link on Gallery Click 
 	beta:false
 });
 ```
