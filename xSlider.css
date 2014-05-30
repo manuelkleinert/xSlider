@@ -101,6 +101,11 @@ xxxxxxx      xxxxxxxPPPPPPPPPP          aaaaaaaaaa  aaaa   gggggggg::::::g     e
 .xpager-slider[data-type='karussell'] .overflow .inner-content .image-content.start{z-index:2;}
 .xpager-slider[data-type='karussell'] .overflow .inner-content .image-content .comments{z-index:1;}
 
+/* Animate karussell-vertical */
+.xpager-slider[data-type='karussell-vertical'] .overflow .inner-content .image-content .image{position:absolute;}
+.xpager-slider[data-type='karussell-vertical'] .overflow .inner-content .image-content.start{z-index:2;}
+.xpager-slider[data-type='karussell-vertical'] .overflow .inner-content .image-content .comments{z-index:1;}
+
 /* Animate Ken-Burns */
 .xpager-slider[data-type='ken-burns'] .overflow .inner-content{position:relative; height:100%; width:100%;}
 .xpager-slider[data-type='ken-burns'] .overflow .inner-content .image-content{display:block; position:absolute; height:100%; width:100%;}

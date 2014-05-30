@@ -43,7 +43,7 @@ var xSlider = function(options,fx){
 		obj:false,
 		showTime:5000, // Anzeige Zeit
 		animateSpeed:700, // Animations Zeit
-		animateType:"fade", // Animation Type
+		animateType:"fade", // Animation Type (slide,slide-vertical,karussell,karussell-vertical,fade,ken-burns)
 		easingType:"linear", // Animation Easing Type
 		verticalFormat:false, // Hochformat anpassem
 		scale: true, // Bilder Skalieren
@@ -409,6 +409,23 @@ xSlider.prototype = {
                     $(aktiv).css("left",(this.width)*-1);
                     $(last).animate({left:this.width},this.animateSpeed,this.easingType);
                     $(aktiv).animate({left:0},this.animateSpeed,this.easingType,function(){
+                        if(fx){fx();} 
+                    });
+                }
+			break;
+            case "karussell-vertical":
+                $(imageContent).not(last,aktiv).css("z-index",1);
+                $(last).css("z-index",2);
+                if(this.direction == "next"){
+                    $(aktiv).css({"top":this.height,"z-index":3});
+                    $(last).animate({top:(this.height)*-1},this.animateSpeed,this.easingType);
+                    $(aktiv).animate({top:0},this.animateSpeed,this.easingType,function(){
+                        if(fx){fx();} 
+                    });
+                }else{
+                    $(aktiv).css("top",(this.height)*-1);
+                    $(last).animate({top:this.height},this.animateSpeed,this.easingType);
+                    $(aktiv).animate({top:0},this.animateSpeed,this.easingType,function(){
                         if(fx){fx();} 
                     });
                 }
