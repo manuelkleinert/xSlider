@@ -24,26 +24,26 @@ xxxxxxx      xxxxxxxPPPPPPPPPP          aaaaaaaaaa  aaaa   gggggggg::::::g     e
                                                            ggg::::::ggg                                            
                                                               gggggg
 															  
-© xPager - xSlider - Manuel Kleinert - www.xpager.ch - info(at)xpager.ch - v 1.0.2 - 28.05.2014
+© xPager - xSlider - Manuel Kleinert - www.xpager.ch - info(at)xpager.ch - v 1.0.3 - 30.05.2014
 #####################################################################################################################*/
 
-.xpager-slider{height:400px; width:100%; position:relative; min-height:150px;}
+.xpager-slider{height:600px; width:100%; position:relative; min-height:150px;}
 .xpager-slider img{opacity:0; filter:alpha(opacity=0);}
 .xpager-slider .overflow{height:100%; width:100%; overflow:hidden; position:relative; opacity:0; filter:alpha(opacity=0);}
 .xpager-slider .overflow .inner-content{width:100000px; position:absolute;top:0px;left:0px;}
 .xpager-slider .overflow .inner-content .image-content{position: relative;}
 .xpager-slider .overflow .inner-content .image-content .image{-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover; background-position:center;z-index:0;background-repeat:no-repeat;}
 
-.xpager-slider .loader{height:50px; width:50px; background-image:url(images/loader.gif); background-position:center; position:absolute; top:50%; left:50%; margin-left:-25px; margin-top:-25px; background-size:50px;}
+.xpager-slider .loader{height:50px; width:50px; background-image:url(img/loader.gif); background-position:center; position:absolute; top:50%; left:50%; margin-left:-25px; margin-top:-25px; background-size:50px;}
 
 .xpager-slider .navigation{position:absolute; bottom:0px; left:0px; z-index:11;}
 .xpager-slider .navigation div{float:left; width:20px; height:20px; line-height:20px; text-align:center; cursor:pointer;-webkit-background-size:contain;-moz-background-size:contain;-o-background-size:contain;background-size:contain;}
-.xpager-slider .navigation div.next{background-image:url(images/nav_next.png); background-repeat:no-repeat; background-position:center;}
-.xpager-slider .navigation div.prev{background-image:url(images/nav_prev.png); background-repeat:no-repeat; background-position:center;}
+.xpager-slider .navigation div.next{background-image:url(img/nav_next.png); background-repeat:no-repeat; background-position:center;}
+.xpager-slider .navigation div.prev{background-image:url(img/nav_prev.png); background-repeat:no-repeat; background-position:center;}
 
 .xpager-slider .top-navigation div{position:absolute; width:50%; height:100%; top:0px; z-index:5; opacity:0; filter:alpha(opacity=0); -webkit-transition:all 0.5s linear; -moz-transition:all 0.5s linear;-o-transition:all 0.5s linear;-ms-transform:all 0.5s linear;transition:all 0.5s linear;}
-.xpager-slider .top-navigation div.next{background-image:url(images/nav_next.png);right:0px; background-position: 95% center; background-size: 30px;background-repeat: no-repeat; cursor:pointer; text-align:right;}
-.xpager-slider .top-navigation div.prev{background-image:url(images/nav_prev.png);left:0px; background-position: 5% center; background-size: 30px;background-repeat: no-repeat; cursor:pointer; text-align:left;}
+.xpager-slider .top-navigation div.next{background-image:url(img/nav_next.png);right:0px; background-position: 95% center; background-size: 30px;background-repeat: no-repeat; cursor:pointer; text-align:right;}
+.xpager-slider .top-navigation div.prev{background-image:url(img/nav_prev.png);left:0px; background-position: 5% center; background-size: 30px;background-repeat: no-repeat; cursor:pointer; text-align:left;}
 .xpager-slider:hover .top-navigation div{opacity:1; filter:alpha(opacity=1);}
 
 .xpager-slider .thumbnail-navigation{width:100%; height:80px; position:absolute; bottom:0px; left:0px; z-index:10; overflow:hidden; background-color:rgba(255,255,255, .5);}
@@ -52,8 +52,8 @@ xxxxxxx      xxxxxxxPPPPPPPPPP          aaaaaaaaaa  aaaa   gggggggg::::::g     e
 .xpager-slider .thumbnail-navigation .thumbnail-content .image{width:120px; height:70px; float:left; margin-right:10px; -webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;background-position:center;-webkit-transition:all 1s linear; -moz-transition:all 1s linear;-o-transition:all 1s linear;-ms-transform:all 1s linear;transition:all 1s linear; cursor:pointer; background-repeat:no-repeat; border:solid 1px #CCC;}
 .xpager-slider .thumbnail-navigation .thumbnail-content .image.verticalFormat{-webkit-background-size:contain;-moz-background-size:contain;-o-background-size:contain;background-size:contain;}
 .xpager-slider .thumbnail-navigation .thumbnail-content .image.aktiv{border-color:#666;}
-.xpager-slider .thumbnail-navigation .thumbnail-prev{height:20px; width:20px; position:absolute; top:50%; left:10px; margin-top:-10px; z-index:2; text-align:center; cursor:pointer; background-image:url(images/nav_prev.png); background-repeat:no-repeat; background-position:center; background-size:20px;}
-.xpager-slider .thumbnail-navigation .thumbnail-next{height:20px; width:20px; position:absolute; top:50%; right:10px; margin-top:-10px; z-index:2; text-align:center; cursor:pointer; background-image:url(images/nav_next.png); background-repeat:no-repeat; background-position:center; background-size:20px; }
+.xpager-slider .thumbnail-navigation .thumbnail-prev{height:20px; width:20px; position:absolute; top:50%; left:10px; margin-top:-10px; z-index:2; text-align:center; cursor:pointer; background-image:url(img/nav_prev.png); background-repeat:no-repeat; background-position:center; background-size:20px;}
+.xpager-slider .thumbnail-navigation .thumbnail-next{height:20px; width:20px; position:absolute; top:50%; right:10px; margin-top:-10px; z-index:2; text-align:center; cursor:pointer; background-image:url(img/nav_next.png); background-repeat:no-repeat; background-position:center; background-size:20px; }
 
 .xpager-slider .nav-points{width: 100%; height:25px; text-align:center; z-index:6;}
 .xpager-slider .nav-points .points-content{ display:inline-block;}
@@ -66,7 +66,6 @@ xxxxxxx      xxxxxxxPPPPPPPPPP          aaaaaaaaaa  aaaa   gggggggg::::::g     e
 .xpager-slider .pagenum{position:absolute; bottom:0px; right:0px; z-index:11; background-color:#fff;}
 .xpager-slider .pagenum div{float:left; width:20px; height:20px; line-height:20px; text-align:center;}
 .xpager-slider .pagenum div.max{float:left; border-left:solid 1px #000;}
-
 
 /* Format */
 .xpager-slider .overflow .inner-content .image-content .image.verticalFormat{-webkit-background-size:contain;-moz-background-size:contain;-o-background-size:contain;background-size:contain;background-color:#000;}
@@ -91,6 +90,17 @@ xxxxxxx      xxxxxxxPPPPPPPPPP          aaaaaaaaaa  aaaa   gggggggg::::::g     e
 .xpager-slider[data-type='fade'] .overflow .inner-content{position:relative; height:100%; width:100%;}
 .xpager-slider[data-type='fade'] .overflow .inner-content .image-content{float:none; position:absolute; top:0px; left:0px; z-index:0; display:block;}
 .xpager-slider[data-type='fade'] .overflow .inner-content .start{z-index:2!important;}
+
+.xpager-slider[data-type='karussell'] .overflow .inner-content .image-content{
+    background-color:red;
+    position:absolute; top:0px; float:left;
+}
+
+
+/* Animate karussell */
+.xpager-slider[data-type='karussell'] .overflow .inner-content .image-content{position:absolute; top:0px; float:left;}
+.xpager-slider[data-type='karussell'] .overflow .inner-content .image-content.start{z-index:2;}
+.xpager-slider[data-type='karussell'] .overflow .inner-content .image-content .comments{z-index:1;}
 
 /* Animate Ken-Burns */
 .xpager-slider[data-type='ken-burns'] .overflow .inner-content{position:relative; height:100%; width:100%;}
