@@ -1,11 +1,12 @@
 xSlider
 =======
 <br>
-Responsive Image Slider with many settings.
+Responsive Image Slider with many settings.<br>
+[xSlider - Webseite]
 <br><br>
 
 HTML
-=======
+----
 
 ``` html
 <div id="slider" class="xpager-slider">
@@ -18,7 +19,7 @@ HTML
 
 
 Script
-=======
+----
 
 ``` js
 $("#slider").xSlider({
@@ -50,3 +51,5 @@ $("#slider").xSlider({
 	beta:false
 });
 ```
+
+[xSlider - Webseite]:http://xpager.ch/entwicklung/xslider/
