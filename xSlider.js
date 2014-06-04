@@ -431,6 +431,7 @@ xSlider.prototype = {
                 }
 			break;
 			case "fade":
+				$(imageContent).not(aktiv).not(last).hide();
 				$(last).css('z-index',1);
 				$(aktiv).hide().css('z-index',2).fadeIn(this.animateSpeed,this.easingType,function(){
                     $(imageContent).removeClass("start");    
