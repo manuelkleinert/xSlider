@@ -1,9 +1,8 @@
 xSlider
 =======
 <br>
-Responsive Image Slider with many settings.<br>
+Responsive Image Slider with many settings.
 [xSlider - Webseite]
-<br><br>
 
 HTML
 ----
