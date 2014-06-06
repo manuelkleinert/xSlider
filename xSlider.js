@@ -110,7 +110,7 @@ xSlider.prototype = {
 		this.lastPosition = $(images).length;
 		var num = 0;
 		// ADD Loader
-		$(this.obj).append("<div class:'loader'></div>").hide().fadeIn(500);
+		$(this.obj).append("<div class='loader'></div>").hide().fadeIn(500);
 		// Weniger als 2 Bilder
 		if(this.imageNum <= 1){
 			this.touchControl = false;
