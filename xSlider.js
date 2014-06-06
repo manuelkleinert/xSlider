@@ -110,7 +110,7 @@ xSlider.prototype = {
 		this.lastPosition = $(images).length;
 		var num = 0;
 		// ADD Loader
-		$(this.obj).append($("<div>",{class:"loader"})).hide().fadeIn(500);
+		$(this.obj).append("<div class:'loader'></div>").hide().fadeIn(500);
 		// Weniger als 2 Bilder
 		if(this.imageNum <= 1){
 			this.touchControl = false;
@@ -182,6 +182,7 @@ xSlider.prototype = {
 						html += "<div class='comments'><div class='comments-content'>"+obj["comment"]+"</div></div>";
 					}
 					html += "</div>";
+
 				}
 			});
 		html += "</div></div>";
@@ -517,16 +518,18 @@ xSlider.prototype = {
 	setSize:function(){
 		var self = this;
 		var innerContent = $(this.obj).find(".overflow .inner-content");
-        
         if(this.fullSize){
-            this.width = $(window).width();
-		    this.height = $(window).height();
-            var marginTopBottom = parseInt($(this.obj).css("margin-top"))+parseInt($(this.obj).css("margin-bottom"));
-            var marginLeftRight = parseInt($(this.obj).css("margin-left"))+parseInt($(this.obj).css("margin-right"));
+            var marginTopBottom = 0;
+            if(!isNaN(parseInt($(this.obj).css("margin-top")))){ marginTopBottom += parseInt($(this.obj).css("margin-top"))}
+            if(!isNaN(parseInt($(this.obj).css("margin-bottom")))){ marginTopBottom += parseInt($(this.obj).css("margin-bottom"))}
+            
+            marginLeftRight = 0;
+            if(!isNaN(parseInt($(this.obj).css("margin-right")))){ marginLeftRight += parseInt($(this.obj).css("margin-right"))}
+            if(!isNaN(parseInt($(this.obj).css("margin-left")))){ marginLeftRight += parseInt($(this.obj).css("margin-left"))}
             
             this.width = $(window).width()-marginLeftRight;
 		    this.height = $(window).height()-marginTopBottom;
-            
+
             $(this.obj).find(".overflow").css({"width":this.width,"height":this.height});
             $(this.obj).css({"width":this.width,"height":this.height});
         }else{
@@ -536,9 +539,8 @@ xSlider.prototype = {
         
 		if(this.animateType == 'slide'){$(innerContent).css({"left":(this.width*this.position)*-1,"width":(this.imageNum*this.width)+1000});}
         
-		$($(innerContent).find(".image-content .image")).each(function(i,obj){
-    		$(obj).css({"width":self.width,"height":self.height});
-    	});
+        
+		$($(innerContent).find(".image-content .image")).css({"width":this.width,"height":this.height});
 	},
 	
 	setStatus:function(innerContent,imageContent,aktiv,last){
