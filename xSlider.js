@@ -24,7 +24,7 @@ xxxxxxx      xxxxxxxPPPPPPPPPP          aaaaaaaaaa  aaaa   gggggggg::::::g     e
                                                            ggg::::::ggg                                            
                                                               gggggg
 															  
-© xPager - xSlider - Manuel Kleinert - www.xpager.ch - info(at)xpager.ch - v 1.0.7 - 05.06.2014
+© xPager - xSlider - Manuel Kleinert - www.xpager.ch - info(at)xpager.ch - v 1.0.8 - 06.06.2014
 #####################################################################################################################*/
 
 (function($){
@@ -64,6 +64,7 @@ var xSlider = function(options,fx){
 		shadowBox:false, // Open on Click in Shadowbox
 		shadowBoxComments:true, // Show Alt Immages Comment in ShadowBox
         imageLink:false, // Open Link on Gallery Click 
+        fullSize:false,
 		beta:false
 	}, options);
 	// Attribut
@@ -152,6 +153,9 @@ xSlider.prototype = {
 		if(this.randomOrder){
 			this.imgArray.sort(function() {return 0.5 - Math.random()});
 		}
+        
+        if(this.fullSize){$(this.obj).addClass("fullSize");}
+        
 		var html = "<div class='overflow'><div class='inner-content'>";
 			$(this.imgArray).each(function(i,obj) {
 				if(obj){
@@ -513,9 +517,25 @@ xSlider.prototype = {
 	setSize:function(){
 		var self = this;
 		var innerContent = $(this.obj).find(".overflow .inner-content");
-		this.width = $(self.obj).width();
-		this.height = $(self.obj).height();
+        
+        if(this.fullSize){
+            this.width = $(window).width();
+		    this.height = $(window).height();
+            var marginTopBottom = parseInt($(this.obj).css("margin-top"))+parseInt($(this.obj).css("margin-bottom"));
+            var marginLeftRight = parseInt($(this.obj).css("margin-left"))+parseInt($(this.obj).css("margin-right"));
+            
+            this.width = $(window).width()-marginLeftRight;
+		    this.height = $(window).height()-marginTopBottom;
+            
+            $(this.obj).find(".overflow").css({"width":this.width,"height":this.height});
+            $(this.obj).css({"width":this.width,"height":this.height});
+        }else{
+            this.width = $(this.obj).width();
+		    this.height = $(this.obj).height();
+        }
+        
 		if(this.animateType == 'slide'){$(innerContent).css({"left":(this.width*this.position)*-1,"width":(this.imageNum*this.width)+1000});}
+        
 		$($(innerContent).find(".image-content .image")).each(function(i,obj){
     		$(obj).css({"width":self.width,"height":self.height});
     	});

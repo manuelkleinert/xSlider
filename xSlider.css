@@ -24,10 +24,11 @@ xxxxxxx      xxxxxxxPPPPPPPPPP          aaaaaaaaaa  aaaa   gggggggg::::::g     e
                                                            ggg::::::ggg                                            
                                                               gggggg
 															  
-© xPager - xSlider - Manuel Kleinert - www.xpager.ch - info(at)xpager.ch - v 1.0.4 - 5.06.2014
+© xPager - xSlider - Manuel Kleinert - www.xpager.ch - info(at)xpager.ch - v 1.0.8 - 06.06.2014
 #####################################################################################################################*/
 
 .xpager-slider{height:600px; width:100%; position:relative; min-height:150px;}
+.xpager-slider.fullSize{position:fixed; top:0px; left:0px; width:100%; height:100%;}
 .xpager-slider img{opacity:0; filter:alpha(opacity=0);}
 .xpager-slider .overflow{height:100%; width:100%; overflow:hidden; position:relative; opacity:0; filter:alpha(opacity=0);}
 .xpager-slider .overflow .inner-content{width:100000px; position:absolute;top:0px;left:0px;}
