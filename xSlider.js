@@ -24,7 +24,7 @@ xxxxxxx      xxxxxxxPPPPPPPPPP          aaaaaaaaaa  aaaa   gggggggg::::::g     e
                                                            ggg::::::ggg                                            
                                                               gggggg
 															  
-© xPager - xSlider - Manuel Kleinert - www.xpager.ch - info(at)xpager.ch - v 1.0.8 - 06.06.2014
+© xPager - xSlider - Manuel Kleinert - www.xpager.ch - info(at)xpager.ch - v 1.0.9 - 10.06.2014
 #####################################################################################################################*/
 
 (function($){
@@ -182,7 +182,6 @@ xSlider.prototype = {
 						html += "<div class='comments'><div class='comments-content'>"+obj["comment"]+"</div></div>";
 					}
 					html += "</div>";
-
 				}
 			});
 		html += "</div></div>";
@@ -403,7 +402,7 @@ xSlider.prototype = {
 				});
 			break;
             case "karussell":
-                $(imageContent).not(last,aktiv).css("z-index",1);
+                $(imageContent).not(last,aktiv).css({"left":this.width,"z-index":1});
                 $(last).css("z-index",2);
                 if(this.direction == "next"){
                     $(aktiv).css({"left":this.width,"z-index":3});
@@ -420,7 +419,7 @@ xSlider.prototype = {
                 }
 			break;
             case "karussell-vertical":
-                $(imageContent).not(last,aktiv).css("z-index",1);
+                $(imageContent).not(last,aktiv).css({"top":this.height,"z-index":1});
                 $(last).css("z-index",2);
                 if(this.direction == "next"){
                     $(aktiv).css({"top":this.height,"z-index":3});
