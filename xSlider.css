@@ -24,7 +24,7 @@ xxxxxxx      xxxxxxxPPPPPPPPPP          aaaaaaaaaa  aaaa   gggggggg::::::g     e
                                                            ggg::::::ggg                                            
                                                               gggggg
 															  
-© xPager - xSlider - Manuel Kleinert - www.xpager.ch - info(at)xpager.ch - v 1.0.8 - 06.06.2014
+© xPager - xSlider - Manuel Kleinert - www.xpager.ch - info(at)xpager.ch - v 1.0.9 - 06.06.2014
 #####################################################################################################################*/
 
 .xpager-slider{height:600px; width:100%; position:relative; min-height:150px;}
@@ -43,8 +43,8 @@ xxxxxxx      xxxxxxxPPPPPPPPPP          aaaaaaaaaa  aaaa   gggggggg::::::g     e
 .xpager-slider .navigation div.prev{background-image:url(img/nav_prev.png); background-repeat:no-repeat; background-position:center;}
 
 .xpager-slider .top-navigation div{position:absolute; width:50%; height:100%; top:0px; z-index:5; opacity:0; filter:alpha(opacity=0); -webkit-transition:all 0.5s linear; -moz-transition:all 0.5s linear;-o-transition:all 0.5s linear;-ms-transform:all 0.5s linear;transition:all 0.5s linear;}
-.xpager-slider .top-navigation div.next{background-image:url(img/nav_next.png);right:0px; background-position: 95% center; background-size: 30px;background-repeat: no-repeat; cursor:pointer; text-align:right;}
-.xpager-slider .top-navigation div.prev{background-image:url(img/nav_prev.png);left:0px; background-position: 5% center; background-size: 30px;background-repeat: no-repeat; cursor:pointer; text-align:left;}
+.xpager-slider .top-navigation div.next{background-image:url(img/nav_next.png);right:0px; background-position: 100% center; background-size: 30px;background-repeat: no-repeat; cursor:pointer; text-align:right;}
+.xpager-slider .top-navigation div.prev{background-image:url(img/nav_prev.png);left:0px; background-position: 0% center; background-size: 30px;background-repeat: no-repeat; cursor:pointer; text-align:left;}
 .xpager-slider:hover .top-navigation div{opacity:1; filter:alpha(opacity=1);}
 
 .xpager-slider .thumbnail-navigation{width:100%; height:80px; position:absolute; bottom:0px; left:0px; z-index:10; overflow:hidden; background-color:rgba(255,255,255, .5);}

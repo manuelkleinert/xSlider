@@ -261,17 +261,17 @@ xSlider.prototype = {
 		if(this.touchControl){
 			this.touchStart = false;
 			this.touchEnd= false;
-			$(this.obj).bind('touchstart',function(e){
+			$(this.obj).bind('touchstart MSPointerDown pointerdown',function(e){
 				self.touchStart = false;
 				self.touchEnd = 0;
 			});
-			$(this.obj).bind('touchmove',function(e){
+			$(this.obj).bind('touchmove MSPointerMove pointermove',function(e){
 				if(self.touchStart == false){
 					self.touchStart = e.originalEvent.touches[0].pageX;
 				}
 				self.touchEnd = e.originalEvent.touches[0].pageX;
 			});
-			$(this.obj).bind('touchend',function(e){
+			$(this.obj).bind('touchend MSPointerUp pointerup',function(e){
 				var res = self.touchEnd-self.touchStart;
 				if(res < 0 && res < -50){self.next();}
 				if(res > 0 && res > 50){self.prev();}
