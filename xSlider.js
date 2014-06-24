@@ -24,7 +24,7 @@ xxxxxxx      xxxxxxxPPPPPPPPPP          aaaaaaaaaa  aaaa   gggggggg::::::g     e
                                                            ggg::::::ggg                                            
                                                               gggggg
 															  
-© xPager - xSlider - Manuel Kleinert - www.xpager.ch - info(at)xpager.ch - v 1.0.9 - 10.06.2014
+© xPager - xSlider - Manuel Kleinert - www.xpager.ch - info(at)xpager.ch - v 1.1.0 - 14.06.2014
 #####################################################################################################################*/
 
 (function($){
@@ -91,6 +91,11 @@ var xSlider = function(options,fx){
 	}else{
 		this.obj =  $(this.options.id);	
 	}
+	
+	if(!jQuery.ui && this.easingType != "linear"){
+        this.message("no jQuery UI !!!");
+    }
+	
 	if(this.obj){
 		if($(this.obj).find("img").length){
 			this.init();
