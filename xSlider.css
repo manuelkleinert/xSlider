@@ -24,7 +24,7 @@ xxxxxxx      xxxxxxxPPPPPPPPPP          aaaaaaaaaa  aaaa   gggggggg::::::g     e
                                                            ggg::::::ggg                                            
                                                               gggggg
 															  
-© xPager - xSlider - Manuel Kleinert - www.xpager.ch - info(at)xpager.ch - v 1.0.9 - 06.06.2014
+© xPager - xSlider - Manuel Kleinert - www.xpager.ch - info(at)xpager.ch - v 1.1.0 - 03.07.2014
 #####################################################################################################################*/
 
 .xpager-slider{height:600px; width:100%; position:relative; min-height:150px;}
@@ -89,8 +89,8 @@ xxxxxxx      xxxxxxxPPPPPPPPPP          aaaaaaaaaa  aaaa   gggggggg::::::g     e
 /* Animate fade */
 .xpager-slider[data-type='fade'] .overflow .inner-content .image-content{z-index:0;}
 .xpager-slider[data-type='fade'] .overflow .inner-content{position:relative; height:100%; width:100%;}
-.xpager-slider[data-type='fade'] .overflow .inner-content .image-content{float:none; position:absolute; top:0px; left:0px; z-index:0; display:block;}
-.xpager-slider[data-type='fade'] .overflow .inner-content .start{z-index:2!important;}
+.xpager-slider[data-type='fade'] .overflow .inner-content .image-content{float:none; position:absolute; top:0px; left:0px; z-index:0; display:none;}
+.xpager-slider[data-type='fade'] .overflow .inner-content .start{z-index:2!important; display:block;}
 
 /* Animate karussell */
 .xpager-slider[data-type='karussell'] .overflow .inner-content .image-content{position:absolute; top:0px; float:left;}
@@ -106,12 +106,10 @@ xxxxxxx      xxxxxxxPPPPPPPPPP          aaaaaaaaaa  aaaa   gggggggg::::::g     e
 .xpager-slider[data-type='ken-burns'] .overflow .inner-content{position:relative; height:100%; width:100%;}
 .xpager-slider[data-type='ken-burns'] .overflow .inner-content .image-content{display:block; position:absolute; height:100%; width:100%;}
 .xpager-slider[data-type='ken-burns'] .overflow .inner-content .image-content .image{float:none; position:absolute; top:0px; left:0px; display:block; height:100%; width:100%;  -webkit-transform: scale(1,1);-moz-transform: scale(1,1);-ms-transform:scale(1,1);-o-transform: scale(1,1);transform: scale(1,1);}
-
-/* -> Start */
 .xpager-slider[data-type='ken-burns'] .overflow .inner-content .start{opacity:1; filter:alpha(opacity=1); z-index:2;}
 .xpager-slider[data-type='ken-burns'] .overflow .inner-content .start .image{-webkit-transition:all 30s linear; -moz-transition:all 30s linear;-o-transition:all 30s linear;-ms-transform:all 30s linear;transition:all 30s linear;-webkit-transform: scale(2,2);-moz-transform: scale(2,2);-ms-transform:scale(2,2);-o-transform: scale(2,2);transform: scale(2,2);}
 
-/* -> Animate */
+/* ken-burns */
 .xpager-slider[data-type='ken-burns'] .overflow .inner-content .play .image{-webkit-transition:all 30s linear; -moz-transition:all 30s linear;-o-transition:all 30s linear;-ms-transform:all 30s linear;transition:all 30s linear;}
 .xpager-slider[data-type='ken-burns'] .overflow .inner-content .start .image{-webkit-transform: scale(2,2);-moz-transform: scale(2,2);-ms-transform:scale(2,2);-o-transform: scale(2,2);transform: scale(2,2);}
 
@@ -126,10 +124,8 @@ xxxxxxx      xxxxxxxPPPPPPPPPP          aaaaaaaaaa  aaaa   gggggggg::::::g     e
 .xpager-slider[data-type='ken-burns'] .overflow .inner-content .play[data-x='2'][data-y='1'] .image{background-position:right top;}
 .xpager-slider[data-type='ken-burns'] .overflow .inner-content .play[data-x='2'][data-y='2'] .image{background-position:right bottom;}*/
 
-/* -> Play */
 .xpager-slider[data-type='ken-burns'] .overflow .inner-content .play .image{-webkit-transform: scale(2,2);-moz-transform: scale(2,2);-ms-transform:scale(2,2);-o-transform: scale(2,2);transform: scale(2,2);}
 
-/* -> reset */
 .xpager-slider[data-type='ken-burns'] .overflow .inner-content .reset .xpager-slider[data-type='ken-burns'] .overflow .inner-content .reset .image{-webkit-transition:none; -moz-transition:none; -o-transition:none;-ms-transform:none;transition:none;-webkit-transform: none;-moz-transform:none;-ms-transform:none;-o-transform:none;transform:none; -webkit-transform: scale(1,1);-moz-transform: scale(1,1);-ms-transform:scale(1,1);-o-transform: scale(1,1);transform: scale(1,1);}
 .xpager-slider[data-type='ken-burns'] .overflow .inner-content .reset .xpager-slider[data-type='ken-burns'] .overflow .inner-content .reset{z-index:0;}
 
