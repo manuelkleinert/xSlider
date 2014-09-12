@@ -24,7 +24,7 @@ xxxxxxx      xxxxxxxPPPPPPPPPP          aaaaaaaaaa  aaaa   gggggggg::::::g     e
                                                            ggg::::::ggg                                            
                                                               gggggg
 															  
-© xPager - xSlider - Manuel Kleinert - www.xpager.ch - info(at)xpager.ch - v 1.1.0 - 14.06.2014
+© xPager - xSlider - Manuel Kleinert - www.xpager.ch - info(at)xpager.ch - v 1.1.2 - 12.09.2014
 #####################################################################################################################*/
 
 (function($){
@@ -378,6 +378,7 @@ xSlider.prototype = {
 			var self = this;
             this.direction = "next";
 			this.fadeStatus = true;
+			this.lastPosition = this.position;
 			this.position = pos;
 			this.animate(function(){
 				self.startAutoplay();
