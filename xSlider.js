@@ -24,7 +24,7 @@ xxxxxxx      xxxxxxxPPPPPPPPPP          aaaaaaaaaa  aaaa   gggggggg::::::g     e
                                                            ggg::::::ggg                                            
                                                               gggggg
 															  
-© xPager - xSlider - Manuel Kleinert - www.xpager.ch - info(at)xpager.ch - v 1.1.2 - 12.09.2014
+© xPager - xSlider - Manuel Kleinert - www.xpager.ch - info(at)xpager.ch - v 2.0.0 - 15.12.2014
 #####################################################################################################################*/
 
 (function($){
@@ -408,7 +408,7 @@ xSlider.prototype = {
 				});
 			break;
             case "karussell":
-                $(imageContent).not(last,aktiv).css({"left":this.width,"z-index":1});
+                $(imageContent).not(last,aktiv).css({"left":this.width,"z-index":1,"display":"block"});
                 $(last).css("z-index",2);
                 if(this.direction == "next"){
                     $(aktiv).css({"left":this.width,"z-index":3});
@@ -425,7 +425,7 @@ xSlider.prototype = {
                 }
 			break;
             case "karussell-vertical":
-                $(imageContent).not(last,aktiv).css({"top":this.height,"z-index":1});
+                $(imageContent).not(last,aktiv).css({"top":this.height,"z-index":1,"display":"block"});
                 $(last).css("z-index",2);
                 if(this.direction == "next"){
                     $(aktiv).css({"top":this.height,"z-index":3});

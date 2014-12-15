@@ -24,7 +24,7 @@ xxxxxxx      xxxxxxxPPPPPPPPPP          aaaaaaaaaa  aaaa   gggggggg::::::g     e
                                                            ggg::::::ggg                                            
                                                               gggggg
 															  
-© xPager - xSlider - Manuel Kleinert - www.xpager.ch - info(at)xpager.ch - v 1.1.0 - 03.07.2014
+© xPager - xSlider - Manuel Kleinert - www.xpager.ch - info(at)xpager.ch - v 2.1.0 - 15.12.2014
 #####################################################################################################################*/
 
 .xpager-slider{height:600px; width:100%; position:relative; min-height:150px;}
@@ -93,13 +93,13 @@ xxxxxxx      xxxxxxxPPPPPPPPPP          aaaaaaaaaa  aaaa   gggggggg::::::g     e
 .xpager-slider[data-type='fade'] .overflow .inner-content .start{z-index:2!important; display:block;}
 
 /* Animate karussell */
-.xpager-slider[data-type='karussell'] .overflow .inner-content .image-content{position:absolute; top:0px; float:left;}
-.xpager-slider[data-type='karussell'] .overflow .inner-content .image-content.start{z-index:2;}
+.xpager-slider[data-type='karussell'] .overflow .inner-content .image-content{position:absolute; top:0px; float:left; display:none;}
+.xpager-slider[data-type='karussell'] .overflow .inner-content .image-content.start{z-index:2; display:block;}
 .xpager-slider[data-type='karussell'] .overflow .inner-content .image-content .comments{z-index:1;}
 
 /* Animate karussell-vertical */
-.xpager-slider[data-type='karussell-vertical'] .overflow .inner-content .image-content .image{position:absolute;}
-.xpager-slider[data-type='karussell-vertical'] .overflow .inner-content .image-content.start{z-index:2;}
+.xpager-slider[data-type='karussell-vertical'] .overflow .inner-content .image-content{display:none; position:absolute;}
+.xpager-slider[data-type='karussell-vertical'] .overflow .inner-content .image-content.start{z-index:2; display:block;}
 .xpager-slider[data-type='karussell-vertical'] .overflow .inner-content .image-content .comments{z-index:1;}
 
 /* Animate Ken-Burns */
