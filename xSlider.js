@@ -24,7 +24,7 @@ xxxxxxx      xxxxxxxPPPPPPPPPP          aaaaaaaaaa  aaaa   gggggggg::::::g     e
                                                            ggg::::::ggg                                            
                                                               gggggg
 															  
-© xPager - xSlider - Manuel Kleinert - www.xpager.ch - info(at)xpager.ch - v 2.0.0 - 15.12.2014
+© xPager - xSlider - Manuel Kleinert - www.xpager.ch - info(at)xpager.ch - v 2.0.1 - 23.12.2014
 #####################################################################################################################*/
 
 (function($){
@@ -67,7 +67,8 @@ var xSlider = function(options,fx){
         fullSize:false,
 		beta:false
 	}, options);
-	// Attribut
+	
+    // Attribut
 	this.width = 0;
 	this.height = 0;
 	this.imgArray = new Array();
@@ -115,7 +116,7 @@ xSlider.prototype = {
 		this.lastPosition = $(images).length;
 		var num = 0;
 		// ADD Loader
-		$(this.obj).append("<div class='loader'></div>").hide().fadeIn(500);
+		$(this.obj).append("<div class='loader'><i class='fa fa-spinner fa-spin'></i></div>").hide().fadeIn(500);
 		// Weniger als 2 Bilder
 		if(this.imageNum <= 1){
 			this.touchControl = false;
@@ -191,14 +192,14 @@ xSlider.prototype = {
 			});
 		html += "</div></div>";
 		if(this.showTopNav){
-			html += "<div class='top-navigation'><div class='prev'></div><div class='next'></div></div>";
+			html += "<div class='top-navigation'><div class='prev'><i class='fa fa-angle-left'></i></div><div class='next'><i class='fa fa-angle-right'></i></div></div>";
 		}
 		if(this.showNav){
-			html += "<div class='navigation'><div class='prev'></div><div class='next'></div><br clear='all' /></div>";
+			html += "<div class='navigation'><div class='prev'><i class='fa fa-angle-left'></i></div><div class='next'><i class='fa fa-angle-right'></i></div><br clear='all' /></div>";
 		}
 		if(this.showThumbnail){
 			html += "<div class='thumbnail-navigation'>";
-			html += "<div class='thumbnail-prev'></div><div class='thumbnail-next'></div>";
+			html += "<div class='thumbnail-prev'><i class='fa fa-angle-left'></i></div><div class='thumbnail-next'><i class='fa fa-angle-right'></i></div>";
 			html += "<div class='thumbnail-content'>";
 				$(this.imgArray).each(function(i,obj){
 					if(obj){
@@ -232,18 +233,24 @@ xSlider.prototype = {
 		this.setStatus();
 		this.startAutoplay();
 		this.setSize();
+        
         setInterval(function(){self.setSize();},500);
+        
 		$(this.obj).click(function(){
 			self.mouseFirstEvent = true;	
 		});
+        
 		$(window).resize(function(){
 			self.setSize();
 		});
+        
 		if(this.showNav || this.showTopNav){					
 			$(this.obj).find(".next").click(function(){self.next();});
 			$(this.obj).find(".prev").click(function(){self.prev();});
 		}
-		$(this.obj).find(".loader").fadeOut(500).remove();
+		
+        $(this.obj).find(".loader").fadeOut(500).remove();
+        
 		if(this.showThumbnail){
 			this.thumbnailContent = $(this.obj).find(".thumbnail-navigation .thumbnail-content");
 			$(this.thumbnailContent).children(".image").click(function(){
