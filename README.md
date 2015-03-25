@@ -1,8 +1,6 @@
 xSlider
 ===========
-<br>
 Responsive Image Slider
-
 [xSlider - Webseite]
 
 ## Installation
