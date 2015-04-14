@@ -188,7 +188,7 @@ $("#slider").xSlider({
 		  <td>imageLink</td>
 		  <td>boolean</td>
 		  <td>false</td>
-		  <td>Open link on Image Click (set &quot;showTopNav&quot; : false)</td>
+		  <td>Open link on Image Click "data-url" (set &quot;showTopNav&quot; : false)</td>
 	  </tr>
 		<tr>
 		  <td>fullSize</td>
