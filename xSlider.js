@@ -24,7 +24,7 @@ xxxxxxx      xxxxxxxPPPPPPPPPP          aaaaaaaaaa  aaaa   gggggggg::::::g     e
                                                            ggg::::::ggg                                            
                                                               gggggg
 															  
-© xPager - xSlider - Manuel Kleinert - www.xpager.ch - info(at)xpager.ch - v 2.0.1 - 23.12.2014
+© xPager - xSlider - Manuel Kleinert - www.xpager.ch - info(at)xpager.ch - v 2.1.2 - 14.14.2015
 #####################################################################################################################*/
 
 (function($){
@@ -41,29 +41,29 @@ var xSlider = function(options,fx){
 	this.options = $.extend({
 		id:false,
 		obj:false,
-		showTime:5000, // Anzeige Zeit
-		animateSpeed:700, // Animations Zeit
-		animateType:"fade", // Animation Type (slide,slide-vertical,karussell,karussell-vertical,fade,ken-burns)
-		easingType:"linear", // Animation Easing Type
-		verticalFormat:false, // Hochformat anpassem
-		scale: true, // Bilder Skalieren
-		autoplay:true, // Auto Start
-		autoStop:true, // Stop on Click
-		touchControl:true, // Touch Control
-		keyControl:true, // Key Control
-		showTopNav:true, // Next Back Navigation on Image
-		detectBrightness:false, // Helligkeit der Bilder erkennen (Canvas)
-		showNav:false,  // Next Back Buttons bottom
-		showPageNum:false, // Page Nummbers
-		showThumbnail:false, // Thumbnail Navigation
-		scrollThumbnailNum:3, // Nummber of Scrolling Thumbs
-		autoThumbnailScroll:true, // Auto Thumb Scroll
-		showNavPoints:false, // Show Points Nav
-		showComments:false, // Show Alt Immages Comment
-		randomOrder:false, // Order
-		shadowBox:false, // Open on Click in Shadowbox
-		shadowBoxComments:true, // Show Alt Immages Comment in ShadowBox
-        imageLink:false, // Open Link on Gallery Click 
+		showTime:5000,                                                          // Anzeige Zeit
+		animateSpeed:700,                                                       // Animations Zeit
+		animateType:"fade",                                                     // Animation Type (slide,slide-vertical,karussell,karussell-vertical,fade,ken-burns)
+		easingType:"linear",                                                    // Animation Easing Type
+		verticalFormat:false,                                                   // Hochformat anpassem
+		scale: true,                                                            // Bilder Skalieren
+		autoplay:true,                                                          // Auto Start
+		autoStop:true,                                                          // Stop on Click
+		touchControl:true,                                                      // Touch Control
+		keyControl:true,                                                        // Key Control
+		showTopNav:true,                                                        // Next Back Navigation on Image
+		detectBrightness:false,                                                 // Helligkeit der Bilder erkennen (Canvas)
+		showNav:false,                                                          // Next Back Buttons bottom
+		showPageNum:false,                                                      // Page Nummbers
+		showThumbnail:false,                                                    // Thumbnail Navigation
+		scrollThumbnailNum:3,                                                   // Nummber of Scrolling Thumbs
+		autoThumbnailScroll:true,                                               // Auto Thumb Scroll
+		showNavPoints:false,                                                    // Show Points Nav
+		showComments:false,                                                     // Show Alt Immages Comment
+		randomOrder:false,                                                      // Order
+		shadowBox:false,                                                        // Open on Click in Shadowbox
+		shadowBoxComments:true,                                                 // Show Alt Immages Comment in ShadowBox
+        imageLink:true,                                                         // Open Link on Gallery Click 
         fullSize:false,
 		beta:false
 	}, options);
@@ -82,6 +82,7 @@ var xSlider = function(options,fx){
 	this.thumbnailContent = false;
 	this.thumbnailContentWidth = 0;
 	this.mouseFirstEvent = false;
+    this.hasLinks = false;
 	this.fx = fx;
     
 	// Options to Attributs
@@ -109,7 +110,7 @@ var xSlider = function(options,fx){
 }
 
 xSlider.prototype = {
-	init:function(){		
+	init:function(){
 		var self = this;
 		var images = $(this.obj).find("img");
 		this.imageNum = $(images).length;
@@ -135,9 +136,14 @@ xSlider.prototype = {
 			self.imgArray[i]["brightness"] = 0;	
 			self.imgArray[i]["image"].src = $(obj).attr("src");
             self.imgArray[i]["url"] = $(this).attr("data-url");
+            self.imgArray[i]["target"] = $(this).attr("data-target");
             self.imgArray[i]["comment"] = $(this).attr("alt");
             
             if($(this).attr("data-comment")){self.imgArray[i]["comment"] = $(this).attr("data-comment");}
+            
+            if(!self.hasLinks && $(this).attr("data-url")){
+                self.hasLinks = true;
+            }
             
 			self.imageLoader(self.imgArray[i]["image"],function(){
 				self.setBrightness(self.imgArray[i]);
@@ -178,21 +184,30 @@ xSlider.prototype = {
 					if(self.detectBrightness){
 						setClass += " "+obj["brightness"];
 					}
+                    if(obj["url"]){
+                        setClass += " link";
+                    }
 					if(self.shadowBox){setClass += " shadowBox";}
+                    
 					html += "<div class='image-content'><div class='image "+setClass+"' style='";
 					html += "width:"+self.width+"px;";
 					html += "height:"+self.height+"px;";
 					html += "background-image:url("+obj["image"].src+");";
 					html += "'>&nbsp;</div>";
 					if(self.showComments && typeof obj["comment"] != 'undefined' && obj["comment"] != ''){
-						html += "<div class='comments'><div class='comments-content'>"+obj["comment"]+"</div></div>";
+						html += '<div class="comments"><div class="comments-content">'+obj["comment"]+'</div></div>';
 					}
 					html += "</div>";
 				}
 			});
 		html += "</div></div>";
 		if(this.showTopNav){
-			html += "<div class='top-navigation'><div class='prev'><i class='fa fa-angle-left'></i></div><div class='next'><i class='fa fa-angle-right'></i></div></div>";
+            var setClass = "";
+            console.log(this.hasLinks);
+            if(this.hasLinks){
+                setClass = "link";
+            }
+			html += "<div class='top-navigation "+setClass+"'><div class='prev'><i class='fa fa-angle-left'></i></div><div class='next'><i class='fa fa-angle-right'></i></div></div>";
 		}
 		if(this.showNav){
 			html += "<div class='navigation'><div class='prev'><i class='fa fa-angle-left'></i></div><div class='next'><i class='fa fa-angle-right'></i></div><br clear='all' /></div>";
@@ -490,7 +505,13 @@ xSlider.prototype = {
     
     openURL:function(){
         if(this.imgArray[this.position]["url"]){
-            window.open(this.imgArray[this.position]["url"], '_blank');
+            var target = "_top";
+           
+            if(this.imgArray[this.position]["target"]){
+                target = this.imgArray[this.position]["target"];
+            } 
+            console.log(target);
+            window.open(this.imgArray[this.position]["url"],target);
         }
     },
 	
