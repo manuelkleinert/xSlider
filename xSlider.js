@@ -24,7 +24,7 @@ xxxxxxx      xxxxxxxPPPPPPPPPP          aaaaaaaaaa  aaaa   gggggggg::::::g     e
                                                            ggg::::::ggg                                            
                                                               gggggg
 															  
-© xPager - xSlider - Manuel Kleinert - www.xpager.ch - info(at)xpager.ch - v 2.1.2 - 14.14.2015
+© xPager - xSlider - Manuel Kleinert - www.xpager.ch - info(at)xpager.ch - v 2.1.3 - 17.04.2015
 #####################################################################################################################*/
 
 (function($){
@@ -203,7 +203,6 @@ xSlider.prototype = {
 		html += "</div></div>";
 		if(this.showTopNav){
             var setClass = "";
-            console.log(this.hasLinks);
             if(this.hasLinks){
                 setClass = "link";
             }
@@ -506,11 +505,9 @@ xSlider.prototype = {
     openURL:function(){
         if(this.imgArray[this.position]["url"]){
             var target = "_top";
-           
             if(this.imgArray[this.position]["target"]){
                 target = this.imgArray[this.position]["target"];
             } 
-            console.log(target);
             window.open(this.imgArray[this.position]["url"],target);
         }
     },
