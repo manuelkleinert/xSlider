@@ -89,6 +89,12 @@ $("#slider").xSlider({
             <td>Scale images</td>
 		</tr>
 		<tr>
+			<td>autoheight</td>
+			<td>boolen</td>
+			<td>true</td>
+            		<td>Auto image height </td>
+		</tr>
+		<tr>
 			<td>autoplay</td>
 			<td>boolen</td>
 			<td>true</td>
