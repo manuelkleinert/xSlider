@@ -24,7 +24,7 @@ xxxxxxx      xxxxxxxPPPPPPPPPP          aaaaaaaaaa  aaaa   gggggggg::::::g     e
                                                            ggg::::::ggg                                            
                                                               gggggg
 															  
-© xPager - xSlider - Manuel Kleinert - www.xpager.ch - info(at)xpager.ch - v 2.1.3 - 17.04.2015
+© xPager - xSlider - Manuel Kleinert - www.xpager.ch - info(at)xpager.ch - v 2.1.4 - 16.11.2015
 #####################################################################################################################*/
 
 (function($){
@@ -41,18 +41,19 @@ var xSlider = function(options,fx){
 	this.options = $.extend({
 		id:false,
 		obj:false,
-		showTime:5000,                                                          // Anzeige Zeit
+		showTime:5000,                                                          // Show time
 		animateSpeed:700,                                                       // Animations Zeit
 		animateType:"fade",                                                     // Animation Type (slide,slide-vertical,karussell,karussell-vertical,fade,ken-burns)
 		easingType:"linear",                                                    // Animation Easing Type
-		verticalFormat:false,                                                   // Hochformat anpassem
-		scale: true,                                                            // Bilder Skalieren
+		verticalFormat:false,                                                   // Vertical image edit
+		scale: true,                                                            // Image Skalieren
+        autoheight:true,                                                        // Adapt to Image height
 		autoplay:true,                                                          // Auto Start
 		autoStop:true,                                                          // Stop on Click
 		touchControl:true,                                                      // Touch Control
 		keyControl:true,                                                        // Key Control
 		showTopNav:true,                                                        // Next Back Navigation on Image
-		detectBrightness:false,                                                 // Helligkeit der Bilder erkennen (Canvas)
+		detectBrightness:false,                                                 // Detect brightness of the images (Canvas)
 		showNav:false,                                                          // Next Back Buttons bottom
 		showPageNum:false,                                                      // Page Nummbers
 		showThumbnail:false,                                                    // Thumbnail Navigation
@@ -131,10 +132,11 @@ xSlider.prototype = {
 		}
 		$(this.obj).attr("data-type",this.animateType).addClass("xpager-slider"); 
 		$(images).each(function(i,obj) {
+
 			self.imgArray[i] = new Array();
 			self.imgArray[i]["image"] = new Image;
 			self.imgArray[i]["brightness"] = 0;	
-			self.imgArray[i]["image"].src = $(obj).attr("src");
+			self.imgArray[i]["image"].src = $(this).attr("src");
             self.imgArray[i]["url"] = $(this).attr("data-url");
             self.imgArray[i]["target"] = $(this).attr("data-target");
             self.imgArray[i]["comment"] = $(this).attr("alt");
@@ -563,8 +565,17 @@ xSlider.prototype = {
             $(this.obj).find(".overflow").css({"width":this.width,"height":this.height});
             $(this.obj).css({"width":this.width,"height":this.height});
         }else{
+            
             this.width = $(this.obj).width();
-		    this.height = $(this.obj).height();
+
+            if(this.autoheight){
+                var imgHeight = this.imgArray[this.position]["image"]["naturalHeight"];
+                var imgWidth = this.imgArray[this.position]["image"]["naturalWidth"];
+                this.height = imgHeight/(imgWidth / this.width);
+                $(this.obj).stop().animate({height:this.height},500);
+            }else{
+                this.height = $(this.obj).height();
+            }
         }
         
 		if(this.animateType == 'slide'){$(innerContent).css({"left":(this.width*this.position)*-1,"width":(this.imageNum*this.width)+1000});}
