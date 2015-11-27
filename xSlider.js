@@ -572,7 +572,7 @@ xSlider.prototype = {
                 var imgHeight = this.imgArray[this.position]["image"]["naturalHeight"];
                 var imgWidth = this.imgArray[this.position]["image"]["naturalWidth"];
                 this.height = imgHeight/(imgWidth / this.width);
-                $(this.obj).stop().animate({height:this.height},500);
+                $(this.obj).css({height:this.height});
             }else{
                 this.height = $(this.obj).height();
             }
